@@ -1,91 +1,67 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Dashboard</div>
+                     <div class="form-group row">
+                                <label for="nom" class="col-md-4 col-form-label text-md-right">{{ __('Nom') }}</label>
+                                    <div class="col-md-6">
+                                        <input id="nom" type="text" class="form-control{{ $errors->has('nom') ? ' is-invalid' : '' }}" name="nom" value="{{ old('nom') }}" required >
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+                                        @if ($errors->has('nom'))
+                                            <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('nom') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="number" class="col-md-4 col-form-label text-md-right">{{ __('Number') }}</label>
+                                    <div class="col-md-6">
+                                        <input id="number" type="phone" class="form-control{{ $errors->has('number') ? ' is-invalid' : '' }}" name="number" value="{{ old('number') }}" required >
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: blue;
-                color: green;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+                                        @if ($errors->has('number'))
+                                            <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('number') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="eamil" class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
+                                    <div class="col-md-6">
+                                        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required >
 
-            .full-height {
-                height: 100vh;
-            }
+                                        @if ($errors->has('email'))
+                                            <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('email') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+                            </div>
+                           
+                            <div class="form-group row mb-0">
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        {{ __('Register') }}
+                                    </button>
+                                </div>
+                            </div>
+                            
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 145px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+                    You are logged in!
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                   Contact
-                </div>
-
-                
             </div>
         </div>
-    </body>
-</html>
+    </div>
+</div>
+@endsection

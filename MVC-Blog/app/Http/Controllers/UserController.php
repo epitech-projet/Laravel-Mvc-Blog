@@ -16,11 +16,10 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($ads)
+    public function index()
     {
-       $ads = Ad::all()
 
-       return view('ads.index', compact('ads'));
+       return view('user');
     }
 
     /**
@@ -41,7 +40,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return 'Le nom est ' . $request->input('lastname');
     }
 
     /**
@@ -52,7 +51,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        return view('user.profile', ['user' => User::findOrFail($user)]);
     }
 
     /**

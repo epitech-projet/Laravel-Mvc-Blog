@@ -63,11 +63,10 @@
         </style>
     </head>
                 <div class="links" style="font-size:30px;">
-                    <a href="http://127.0.0.1:8000/user">Profil</a>
+                    <a href="http://127.0.0.1:8000/user/{id}">Profil</a>
                     <a href="http://127.0.0.1:8000/billet">Recherche</a>
                     <a href="http://127.0.0.1:8000/billet/show">Publication</a>
                     <a href="http://127.0.0.1:8000/billet/new">Publier</a>
-                    <a href="http://127.0.0.1:8000/home">User</a>
                     <a href="http://127.0.0.1:8000/contact">Contact</a>
                     
                 </div>

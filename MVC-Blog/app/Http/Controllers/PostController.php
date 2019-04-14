@@ -2,16 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Billet;
-use Auth;
+use App\Post;
 use Illuminate\Http\Request;
 
-class BilletController extends Controller
+class PostController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +14,7 @@ class BilletController extends Controller
      */
     public function index()
     {
-        return view('billet');
+        //
     }
 
     /**
@@ -40,16 +35,16 @@ class BilletController extends Controller
      */
     public function store(Request $request)
     {
-        return 'Le nom est ' . $request->input('content');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Billet  $billet
+     * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Billet $billet)
+    public function show(Post $post)
     {
         //
     }
@@ -57,10 +52,10 @@ class BilletController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Billet  $billet
+     * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Billet $billet)
+    public function edit(Post $post)
     {
         //
     }
@@ -69,10 +64,10 @@ class BilletController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Billet  $billet
+     * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Billet $billet)
+    public function update(Request $request, Post $post)
     {
         //
     }
@@ -80,10 +75,10 @@ class BilletController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Billet  $billet
+     * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Billet $billet)
+    public function destroy(Post $post)
     {
         //
     }
